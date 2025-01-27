@@ -6,7 +6,7 @@ namespace Domain.Interfaces
     public interface INodeDb
     {
         void Add(Node node);
-        Node AddOneQuentity(int id);
+        Node AddOneQuantity(int id);
         List<Node> GetList();
         bool IsNull();
     }

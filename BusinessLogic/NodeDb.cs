@@ -35,12 +35,12 @@ namespace BusinessLogic
             return nodes.Count == 0;
         }
 
-        public Node AddOneQuentity(int id)
+        public Node AddOneQuantity(int id)
         {
             Node? node = db.Nodes.Find(id);
             if (node != null)
             {
-                node.AddOneQuentity();
+                node.AddOneQuantity();
                 db.Nodes.Update(node);
                 db.SaveChanges();
                 return node;

@@ -7,7 +7,7 @@ using Domain.Shared.ValueObjects;
 
 namespace Persistence
 {
-    // Класс по преобразованию Парамертов в ValueObject 
+    // Класс по преобразованию Параметров в ValueObject 
     public class NodeConfig : IEntityTypeConfiguration<Node>
     {
         public void Configure(EntityTypeBuilder<Node> builder)
@@ -18,9 +18,9 @@ namespace Persistence
                 v => v.Value,
                 v => new Name(v));
 
-            var quentityConverter = new ValueConverter<Quentity, int>(
+            var quantityConverter = new ValueConverter<Quantity, int>(
                 v => v.Value,
-                v => new Quentity(v));
+                v => new Quantity(v));
 
             var parentIdConverter = new ValueConverter<ParentId, int>(
                 v => v.Value,
@@ -34,9 +34,9 @@ namespace Persistence
                 .IsRequired();
 
             builder
-            .Property(p => p.Quentity)
-                .HasConversion(quentityConverter)
-                .HasColumnName("Quentity")
+            .Property(p => p.Quantity)
+                .HasConversion(quantityConverter)
+                .HasColumnName("Quantity")
                 .HasColumnType("int")
                 .IsRequired();
 

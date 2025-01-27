@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using BusinessLogic.Handler.Command.AddOneQuentity;
+using BusinessLogic.Handler.Command.AddOneQuantity;
 using BusinessLogic.Handler.Query.GetTreeAsListString;
 using Domain.Entities.StringListTree;
 using MediatR;
@@ -23,7 +23,7 @@ namespace WebUI.Controllers
             return View(list);
         }
 
-        public IActionResult AddOneQuentity(AddOneQuentityCommand IdNode)
+        public IActionResult AddOneQuantity(AddOneQuantityCommand IdNode)
         {
             _mediator.Send(IdNode);
             return RedirectToAction("Index");

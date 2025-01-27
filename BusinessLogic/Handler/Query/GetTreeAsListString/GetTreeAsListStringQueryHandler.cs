@@ -24,7 +24,7 @@ namespace BusinessLogic.Handler.Query.GetTreeAsListString
 
             nodes.Sort((node1, node2) => node1.Id.CompareTo(node2.Id));
 
-            Tree root = new(0, new Name("root"), new Quentity(0), new ParentId(0));
+            Tree root = new(0, new Name("root"), new Quantity(0), new ParentId(0));
 
             List<Tree> nodesTree = [];
             nodesTree = _mapper.Map<List<Tree>>(nodes);
@@ -35,7 +35,7 @@ namespace BusinessLogic.Handler.Query.GetTreeAsListString
 
                 if (parentId.Value == 0)
                 {
-                    root.Chuldren.Add(nodesTree[i]);
+                    root.Children.Add(nodesTree[i]);
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace BusinessLogic.Handler.Query.GetTreeAsListString
                     {
                         if (nodes[j].Id == parentId.Value)
                         {
-                            nodesTree[j].Chuldren.Add(nodesTree[i]);
+                            nodesTree[j].Children.Add(nodesTree[i]);
                         }
                     }
                 }

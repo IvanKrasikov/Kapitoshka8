@@ -1,0 +1,26 @@
+﻿@using Domain.Entities.StringListTree;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<IdAndName>
+
+<div>
+    <h1 class="text-center">Капитошка</h1>
+
+    <div>
+        @foreach (var str in Model)
+        {
+            <a style="text-decoration: none; color: #000;"
+               asp-action="AddOneQuentity"
+               asp-controller="Home"
+               asp-route-id=@str.Id>
+
+                <pre style="margin: 0;
+                            height: 36px;
+                            overflow-y: hidden;">
+                    @str.Name
+                        </pre>
+            </a>
+        }
+    </div>
+</div>
